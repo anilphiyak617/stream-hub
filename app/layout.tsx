@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import HeaderNavbar from '@/components/custom/HeaderNavbar'
 import { LeftNavBar } from '@/components/custom/LeftNavBar'
+import { ClerkProvider } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,18 +18,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <HeaderNavbar />
-        <main className='w-full h-full flex'>
-          <div className='w-64'>
-            <LeftNavBar />
-          </div>
-          <div className='flex-1'>
-            {children}
-          </div>
-        </main>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <HeaderNavbar />
+          <main className='w-full h-full flex'>
+            <div className='w-64'>
+              <LeftNavBar />
+            </div>
+            <div className='flex-1'>
+              {children}
+            </div>
+          </main>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

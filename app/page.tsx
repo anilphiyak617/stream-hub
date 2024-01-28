@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton';
-import Image from 'next/image'
 
 interface typeA {
   name: number;
