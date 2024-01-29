@@ -21,14 +21,8 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <HeaderNavbar />
           <main className='w-full h-full flex'>
-            <div className='w-64'>
-              <LeftNavBar />
-            </div>
-            <div className='flex-1'>
-              {children}
-            </div>
+            {children}
           </main>
         </body>
       </html>
